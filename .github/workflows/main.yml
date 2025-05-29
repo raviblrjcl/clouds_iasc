@@ -1,20 +1,19 @@
-
 name: Windows - Litemanager Demo / Test
 on:
   workflow_dispatch:
 jobs:
   build:
-  name: Start building Litemanager now ..
-  runs-on: windows-latest
+    name: Start building Litemanager now ..
+    runs-on: windows-latest
  
-  steps:
-    - name: Downloading & installing lm_win-10_github-rdp
-      run: |
-        Invoke-WebRequest -Uri "https://github.com/chamod12/lm_win-10_github_rdp/-/raw/main/Downloads.bat" -Outfile "Downloadfile.bat"
-        cmd /c Downloadfile.bat
+    steps:
+      - name: Downloading & installing lm_win-10_github-rdp
+        run: |
+          Invoke-WebRequest -Uri "https://github.com/chamod12/lm_win-10_github_rdp/-/raw/main/Downloads.bat" -Outfile "Downloadfile.bat"
+          cmd /c Downloadfile.bat
 
-    - name: Connect to lm_win-10_github-rdp instance
-      run: cmd /c show.bat
+      - name: Connect to lm_win-10_github-rdp instance
+        run: cmd /c show.bat
 
-    - name: Time Counter
-      run: cmd /c loop.bat
+      - name: Time Counter
+        run: cmd /c loop.bat
